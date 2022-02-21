@@ -15,3 +15,13 @@ func TestField(t *testing.T) {
 		WithField("name", "Galih Setiadi").
 		Info("Hello World")
 }
+
+func TestFields(t *testing.T) {
+	logger := logrus.New()
+	logger.SetFormatter(&logrus.JSONFormatter{})
+
+	logger.WithFields(logrus.Fields{
+		"username": "galih",
+		"name":     "Galih Setiadi",
+	}).Info("Hello World")
+}
